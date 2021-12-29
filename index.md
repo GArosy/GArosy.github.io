@@ -1,37 +1,39 @@
-## Gsy's Blog
+# 最终手册
 
-You can use the [editor on GitHub](https://github.com/GArosy/Garosy.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+6#8#，7#9#，1#3#，12#14#
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 全局调整
 
-### Markdown
+- 颜色调换：`灰色金属铝板 95` <--> `米白色铝方管 234`
+- 全图修订**云线**删除
+- 分缝分色**线宽**修改
+  - 平面分色：70（灰色铝格栅为20）
+  - 墙身分色：统一40
+  - 分缝：统一20
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 分色
 
-```markdown
-Syntax highlighted code block
+### 平面
 
-# Header 1
-## Header 2
-### Header 3
+- 南侧格栅改为一道线，体现背后材质
+- 天井、走廊改材质
 
-- Bulleted
-- List
+### 立面
 
-1. Numbered
-2. List
+- 加百叶、栏杆材质
+- 格栅改成块
+- 屋顶太阳能构架改`米白色仿石漆`
+- 南侧飘窗下内侧改`灰色弹涂`
+- ==线稿在上==
 
-**Bold** and _Italic_ and `Code` text
+### 墙身（最后统一调整）
 
-[Link](url) and ![Image](src)
-```
+- 6-->8可复制
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## 分缝
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GArosy/Garosy.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- 南侧缝
+  - 基座缝不变（红），只保留部分窗间墙竖缝（红）、层间缝（蓝）、铝板缝（黄），其余缝删除（参考6#）
+- 横缝改蓝色
+- 铝板（包括C框和北入门头）缝改2400mm密拼，黄色（参考6#）
+- 
