@@ -89,7 +89,7 @@
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
       /* 指针跳动的过渡效果 */
-      transition: all 2000ms;
+      transition: all 1000ms;
     }
 
     .min-hand {
@@ -167,18 +167,16 @@
       console.log(`${hourDeg}-${minDeg}-${secondDeg}`);
     }
 
-    async function run() {
+    function run() {
       initDate();
-      let r = new Promise((resolve, reject) => {
-        clocktik.play(); 
-        resolve();
-      })
-        .then((result) => {
-          console.log("成功加载");
-          setInterval(updateDate, 1000);
-        }).catch((err) => { });
+      setInterval(() => {
+        updateDate();
+      }, 1000);
     }
 
+    document.addEventListener("click", () => {
+      clocktik.play();
+    })
     window.onload = run();
   </script>
 </body>
