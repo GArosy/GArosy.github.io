@@ -187,11 +187,13 @@
       console.log(`${hourDeg}-${minDeg}-${secondDeg}`);
     }
 
-    window.onload = async function () {
+    async function play() {
       initDate();
       await setInterval(updateDate, 1000);
       clocktik.play();
-    };
+    }
+
+    window.onload = play;
   </script>
 </body>
 
