@@ -16,9 +16,6 @@
       <div class="hand second-hand"></div>
     </div>
   </div>
-  <!-- 辅助线 -->
-  <div class="x-line"></div>
-  <div class="y-line"></div>
 
   <audio src="clocktik.mp3" id="clocktik" loop="true"></audio>
 
@@ -38,23 +35,6 @@
       flex: 1;
       min-height: 100vh;
       align-items: center;
-    }
-
-    /* 辅助线 */
-    .x-line {
-      position: absolute;
-      left: 50%;
-      width: 1px;
-      background-color: black;
-      height: 100%;
-    }
-
-    .y-line {
-      position: absolute;
-      top: 50%;
-      height: 1px;
-      background-color: black;
-      width: 100%;
     }
 
     /* 外框 */
@@ -187,13 +167,19 @@
       console.log(`${hourDeg}-${minDeg}-${secondDeg}`);
     }
 
-    async function play() {
+    async function run() {
       initDate();
-      await setInterval(updateDate, 1000);
-      clocktik.play();
+      let r = new Promise((resolve, reject) => {
+        clocktik.play(); 
+        resolve();
+      })
+        .then((result) => {
+          console.log("成功加载");
+          setInterval(updateDate, 1000);
+        }).catch((err) => { });
     }
 
-    window.onload = play;
+    window.onload = run();
   </script>
 </body>
 
