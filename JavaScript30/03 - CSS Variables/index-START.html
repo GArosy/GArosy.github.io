@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 隐藏referrer特性，绕过防盗链 -->
+  <meta name="referrer" content="no-referrer"> 
+  <title>Scoped CSS Variables and JS</title>
+</head>
+
+<body>
+  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+    <label for="blur">Blur:</label>
+    <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+    <label for="base">Base Color</label>
+    <input type="color" name="basecolor" value="#ffc600">
+  </div>
+
+  <div class="content">
+    <code class="result">
+      img {
+        padding : <span id="code-spacing">10px</span>;
+        filter : blur(<span id="code-blur">10px</span>);
+        background : <span id="code-basecolor">#fff</span>;
+      }
+    </code>
+    <img src="https://pic.netbian.com/uploads/allimg/220327/001531-164831133162ac.jpg">
+  </div>
+
+  <style>
+    /*
+      misc styles, nothing to do with CSS variables
+    */
+    :root {
+      --spacing: 10px;
+      --blur: 10px;
+      --basecolor: #fff;
+    }
+
+    img {
+      padding: var(--spacing);
+      filter: blur(var(--blur));
+      background: var(--basecolor);
+    }
+
+    body {
+      text-align: center;
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .controls label {
+      margin: 0 20px 0 40px;
+    }
+
+    .content {
+      margin: auto;
+      width: fit-content;
+    }
+
+    .result {
+      padding: 10px;
+      margin-bottom: 30px;
+      width: auto;
+      display: block;
+      font-size: 30px;
+      font-family: consola;
+      background: #161f2c;
+    }
+
+    input {
+      width: 100px;
+    }
+  </style>
+
+  <script>
+    // 获得所有input项
+    // querySelectorAll返回一个NodeList，有forEach方法
+    const inputList = document.querySelectorAll('.controls input');
+    
+    // 处理函数
+    function handleUpdate() {
+      // 后缀，dataset获得自定义属性data-sizing
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      document.getElementById(`code-${this.name}`).innerText = this.value + suffix;
+    }
+
+    // 添加监听事件
+    inputList.forEach(item => {
+      item.addEventListener('change', handleUpdate);
+    });
+    inputList.forEach(item => {
+      item.addEventListener('mousemove', handleUpdate);
+    });
+  </script>
+
+</body>
+
+</html>
