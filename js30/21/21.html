@@ -110,6 +110,8 @@
       const orientationHandler = function (e) {
         console.log('other device',e);
         device.innerHTML = 'other device';
+        speed.innerHTML = e.webkitCompassHeading;
+        arrow.style.transform = `rorate(-${e.webkitCompassHeading}deg)`
       }
       window.addEventListener('deviceorientation', orientationHandler);
     }
