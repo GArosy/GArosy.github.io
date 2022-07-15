@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue2_element_manage"]=self["webpackChunkvue2_element_manage"]||[]).push([[317],{9317:function(e,n,t){t.r(n),t.d(n,{default:function(){return s}});var u=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},r=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[t("h1",[e._v("其它页面2")])])}],a={name:"OtherPage2",data:function(){return{}}},l=a,c=t(1001),f=(0,c.Z)(l,u,r,!1,null,null,null),s=f.exports}}]);
+//# sourceMappingURL=317-legacy.c2069a0c.js.map
